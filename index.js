@@ -64,10 +64,33 @@ var isPowerOfTwo = function(n) {
 };
 console.log(isPowerOfTwo(n))
 
-//fabionicc series
+// Fibonacci Number
 var fib = function(n) {
     if (n <= 1)
         return n;
     return fib(n - 1) + fib(n - 2);
 };
 console.log(fib(5));  
+//Find target element index in sorted array.
+function binarySearch(arr, target) {
+    let left = 0;
+    let right = arr.length - 1;
+
+    while (left <= right) {
+        let mid = Math.floor((left + right) / 2);
+
+        if (arr[mid] === target) {
+            return mid;
+        }
+
+        if (arr[mid] < target) {
+            left = mid + 1;
+        } else {
+            right = mid - 1;
+        }
+    }
+
+    return -1;
+}
+
+console.log(binarySearch([1,2,3,4,5,6], 4));
