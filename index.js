@@ -94,3 +94,9 @@ function binarySearch(arr, target) {
 }
 
 console.log(binarySearch([1,2,3,4,5,6], 4));
+let a=10
+let b=20
+let temp=a;
+a=b;
+b=temp;
+console.log(a,b)
