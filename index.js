@@ -156,3 +156,27 @@ function bubbleSort(arr){
 }
 let result=bubbleSort(arr);
 console.log(result)
+
+//selection sort
+let arr=[7,5,8,2,4,1,23]
+
+function selectionSort(a){
+    let n=a.length;
+    for(let i=0;i<n-1;i++){
+        //find the minimum element in unsorted array
+        let min=i;
+       for(let j=i+1;j<n;j++){
+        if(a[j]<a[min]){
+            min=j
+        }
+    }
+         let temp=a[i];
+         a[i]=a[min];
+        a[min]=temp;
+       }
+    return arr;
+      
+
+}
+let result=selectionSort(arr);
+console.log(result)
