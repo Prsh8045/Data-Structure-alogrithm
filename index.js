@@ -226,3 +226,62 @@ list.addAtHead(40);
 
 console.log("After:");
 list.print();
+
+//LinkedList At tail
+class Node {
+  constructor(data) {
+    this.data = data;
+    this.next = null;
+  }
+}
+
+class LinkedList {
+  constructor() {
+    this.head = null;
+  }
+
+  addAtTail(value) {
+    const newNode = new Node(value);
+
+    // If list is empty
+    if (!this.head) {
+      this.head = newNode;
+      return;
+    }
+
+    let current = this.head;
+
+    // Traverse to the last node
+    while (current.next) {
+      current = current.next;
+    }
+
+    current.next = newNode;
+  }
+
+  print() {
+    let current = this.head;
+    let output = "";
+
+    while (current) {
+      output += current.data + " -> ";
+      current = current.next;
+    }
+
+    console.log(output + "null");
+  }
+}
+
+const list = new LinkedList();
+
+list.addAtTail(30);
+list.addAtTail(20);
+list.addAtTail(10);
+
+console.log("Before:");
+list.print();
+
+list.addAtTail(40);
+
+console.log("After:");
+list.print();
