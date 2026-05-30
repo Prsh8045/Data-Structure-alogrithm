@@ -180,3 +180,49 @@ function selectionSort(a){
 }
 let result=selectionSort(arr);
 console.log(result)
+
+//Linked list Add at head 
+class Node {
+  constructor(data) {
+    this.data = data;
+    this.next = null;
+  }
+}
+
+class LinkedList {
+  constructor() {
+    this.head = null;
+  }
+
+  addAtHead(value) {
+    const newNode = new Node(value);
+
+    newNode.next = this.head;
+    this.head = newNode;
+  }
+
+  print() {
+    let current = this.head;
+    let output = "";
+
+    while (current) {
+      output += current.data + " -> ";
+      current = current.next;
+    }
+
+    console.log(output + "null");
+  }
+}
+
+const list = new LinkedList();
+
+// Create: 30 -> 20 -> 10 -> null
+list.addAtHead(10);
+list.addAtHead(20);
+list.addAtHead(30);
+
+// Add 40 at head
+list.addAtHead(40);
+
+console.log("After:");
+list.print();
